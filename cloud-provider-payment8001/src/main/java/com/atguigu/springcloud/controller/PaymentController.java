@@ -16,7 +16,6 @@ import javax.annotation.Resource;
 @Slf4j
 public class PaymentController {
 
-//    @Autowired
     @Resource
     private PaymentService paymentService;
 
@@ -43,7 +42,7 @@ public class PaymentController {
      * @return
      */
     @GetMapping(value = "/payment/get/{id}")
-    public CommonResult getPaymentById(@PathVariable("id") Long id){
+    public CommonResult<Payment> getPaymentById(@PathVariable("id") Long id){
         Payment payment = paymentService.getPaymentById(id);
         log.info("***************插入结果"+payment);
 

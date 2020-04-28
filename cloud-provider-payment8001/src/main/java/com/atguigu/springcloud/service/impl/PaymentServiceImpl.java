@@ -11,7 +11,6 @@ import javax.annotation.Resource;
 public class PaymentServiceImpl implements PaymentService {
 
     @Resource
-//    @Autowired
     private PaymentDao paymentDao;
 
     @Override
