@@ -23,7 +23,7 @@ public class PaymentController {
     @Value("${server.port}")
     private String serverPort;
 
-    //导包需要导入接口包
+    //导包需要导入接口包，获取服务信息
     @Resource
     private DiscoveryClient discoveryClient;
 
