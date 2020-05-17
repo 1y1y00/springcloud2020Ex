@@ -18,7 +18,8 @@
 <!--        <groupId>org.springframework.cloud</groupId>-->
 <!--        <artifactId>spring-cloud-starter-zipkin</artifactId>-->
 <!--    </dependency>-->
-<!--    &lt;!&ndash;eureka-client&ndash;&gt;-->
+
+    <!--eureka-client-->
     <dependency>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>

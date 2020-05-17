@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 @Slf4j
@@ -20,6 +21,8 @@ public class PaymentController {
     @Resource
     private PaymentService paymentService;
 
+
+//    springboot中可以通过${server.port}读取到端口号
     @Value("${server.port}")
     private String serverPort;
 
@@ -55,7 +58,6 @@ public class PaymentController {
     public CommonResult<Payment> getPaymentById(@PathVariable("id") Long id) {
         Payment payment = paymentService.getPaymentById(id);
         log.info("***************插入结果" + payment);
-
         if (payment != null) {
             return new CommonResult(200, "查询数据库成功,server.port是" + serverPort, payment);
         } else {
@@ -78,4 +80,18 @@ public class PaymentController {
         }
         return this.discoveryClient;
     }
+
+    @GetMapping("/payment/lb")
+    public String getPaymentLb(){
+        return serverPort;
+    }
+
+
+    @GetMapping(value = "/payment/feign/timeout")
+    public String paymentFeignTimeOut(){
+        // 业务逻辑处理正确，但是需要耗费3秒钟
+        try { TimeUnit.SECONDS.sleep(3); } catch (InterruptedException e) { e.printStackTrace(); }
+        return serverPort;
+    }
+
 }

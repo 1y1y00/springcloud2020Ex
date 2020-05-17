@@ -52,4 +52,9 @@ public class PaymentController {
             return new CommonResult(444,"查询数据库失败，没有对应数据，ID是"+id,null);
         }
     }
+
+    @GetMapping("/payment/lb")
+    public String getPaymentLb(){
+        return serverPort;
+    }
 }

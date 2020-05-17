@@ -6,9 +6,9 @@ import org.springframework.stereotype.Service;
 
 
 public interface PaymentService {
-    //    新增
+    //新增
     public int create(Payment payment);
 
-    //    查询
+    //查询
     public Payment getPaymentById(@Param("id") Long id);
 }
