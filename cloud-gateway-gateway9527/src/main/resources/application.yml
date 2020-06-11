@@ -24,7 +24,7 @@ spring:
           predicates:
             - Path=/payment/lb/**         # 断言，路径相匹配的进行路由
             #- After=2020-02-21T15:51:37.485+08:00[Asia/Shanghai]
-            #- Cookie=username,zzyy
+            #- Cookie=username,ydh
             #- Header=X-Request-Id, \d+  # 请求头要有X-Request-Id属性并且值为整数的正则表达式
 
 eureka:
