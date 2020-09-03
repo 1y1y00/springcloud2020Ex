@@ -12,7 +12,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class GateWayConfig
 {
-    //RouteLocator：路由构建器
+    /**
+     * RouteLocator：路由构建器
+     */
     @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder routeLocatorBuilder)
     {
